@@ -13,6 +13,14 @@ view: employees {
     type: string
     sql: ${TABLE}.Name ;;
   }
+  dimension: test_url {
+    sql: ${TABLE}.Name ;;
+    link:{
+      label: "test1"
+      url: "https://gcpl2320.cloud.looker.com/dashboards/11?Name={{employees.name}}"
+    }
+  }
+
   measure: count {
     type: count
     drill_fields: [name]
